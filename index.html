@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mis 15 años - Agustina</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;700&family=Pinyon+Script&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #050308;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .flyer-card {
+            width: 100%;
+            max-width: 430px;
+            background: linear-gradient(180deg, rgba(12, 6, 24, 0.45) 0%, rgba(8, 4, 16, 0.75) 50%, rgba(5, 3, 8, 0.96) 100%), 
+                        url('linternas.png') no-repeat center center / cover;
+            border-radius: 30px;
+            padding: 35px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.15), inset 0 0 15px rgba(255, 215, 0, 0.05);
+            backdrop-filter: blur(4px);
+        }
+
+        .header-subtitle {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            color: #ffd700;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .main-title {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 5rem;
+            color: #ffffff;
+            line-height: 1;
+            margin: 2px 0;
+            font-weight: normal;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 2px 2px 10px rgba(0,0,0,0.9);
+        }
+
+        .main-title-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            color: #ffd700;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+        }
+
+        /* GRILLA INTERACTIVA 2X2 PARA RECOMENDACIONES */
+        .grid-checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .check-card {
+            background: rgba(25, 12, 40, 0.75);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 18px;
+            padding: 16px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .check-card:hover, .check-card:active {
+            transform: translateY(-4px) scale(1.02);
+            border-color: #ffd700;
+            background: rgba(45, 20, 70, 0.85);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .check-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+        }
+
+        .check-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .check-desc {
+            font-size: 0.7rem;
+            color: #e0d0f0;
+            line-height: 1.2;
+        }
+
+        /* BLOQUE DE TIEMPO Y LUGAR */
+        .info-pill {
+            background: linear-gradient(135deg, rgba(30, 15, 50, 0.9) 0%, rgba(15, 7, 26, 0.95) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+        }
+
+        .info-pill-title {
+            font-family: 'Cinzel', serif;
+            color: #ffd700;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .info-pill-sub {
+            font-size: 0.8rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* ACCIONES */
+        .action-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-glow {
+            width: 100%;
+            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+            color: #0c0517;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-glow:active {
+            transform: scale(0.97);
+        }
+
+        .btn-subtle {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffd700;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .btn-subtle:hover {
+            background: rgba(255, 215, 0, 0.15);
+        }
+
+        /* DESTELLOS MÁGICOS */
+        .flower-sparkle {
+            position: fixed;
+            width: 7px;
+            height: 7px;
+            background: radial-gradient(circle, #fff9c4 0%, #ffd700 70%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffd700;
+            pointer-events: none;
+            z-index: 9998;
+            animation: floatSparkle 5s ease-in-out infinite;
+        }
+
+        @keyframes floatSparkle {
+            0% { transform: translateY(0) scale(0.5); opacity: 0; }
+            50% { opacity: 1; transform: translateY(-35px) scale(1.1); }
+            100% { transform: translateY(-70px) scale(0.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flyer-card">
+        
+        <p class="header-subtitle">MIS 15 AÑOS</p>
+        <h1 class="main-title">Agustina</h1>
+
+        <!-- GRILLA INTERACTIVA 2X2 -->
+        <div class="grid-checklist">
+            <div class="check-card">
+                <span class="check-icon">🏊‍♀️</span>
+                <span class="check-title">Traje de baño</span>
+                <span class="check-desc">¡Para la pile!</span>
+            </div>
+            
+            <div class="check-card">
+                <span class="check-icon">👕</span>
+                <span class="check-title">Look Casual</span>
+                <span class="check-desc">Para la hora de la foto</span>
+            </div>
+
+            <div class="check-card">
+                <span class="check-icon">🪑</span>
+                <span class="check-title">Tu Sillon</span>
+                <span class="check-desc">Para mayor comodidad</span>
+            </div>
+
+            <div class="check-card">
+                <span class="check-icon">🧉</span>
+                <span class="check-title">Mate / Tere</span>
+                <span class="check-desc">Para compartir la tarde</span>
+            </div>
+        </div>
+
+        <!-- INFO DETALLADA Y HORARIOS -->
+        <div class="info-pill">
+            <div class="info-pill-title">DOMINGO 29 DE NOVIEMBRE</div>
+            <div class="info-pill-sub">⏰ 11:00 HS A 18:00 HS • Garupá</div>
+        </div>
+
+        <div class="action-group">
+            <button class="btn-glow" onclick="window.open('https://maps.app.goo.gl/ir9rUSUv9ZQCoKmm7?g_st=aw', '_blank')">
+                📍 Ver Ubicación Exacta
+        </div>
+
+    </div>
+
+    <script>
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'flower-sparkle';
+            sparkle.style.left = Math.random() * 95 + 'vw';
+            sparkle.style.top = Math.random() * 80 + 10 + 'vh';
+            
+            const size = Math.random() * 5 + 4;
+            sparkle.style.width = size + 'px';
+            sparkle.style.height = size + 'px';
+            
+            const duration = Math.random() * 2 + 4;
+            sparkle.style.animationDuration = duration + 's';
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => { 
+                sparkle.remove(); 
+            }, duration * 1000);
+        }
+        setInterval(createSparkle, 350);
+    </script>
+</body>
+</html>
