@@ -66,16 +66,6 @@
             text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 2px 2px 10px rgba(0,0,0,0.9);
         }
 
-        .main-title-sub {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            letter-spacing: 6px;
-            color: #ffd700;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-        }
-
         /* GRILLA INTERACTIVA 2X2 PARA RECOMENDACIONES */
         .grid-checklist {
             display: grid;
@@ -131,7 +121,7 @@
             border: 1px solid rgba(255, 215, 0, 0.4);
             border-radius: 20px;
             padding: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.6);
         }
 
@@ -149,51 +139,25 @@
             font-weight: 500;
         }
 
-        /* ACCIONES */
+        /* ACCIONES Y UBICACIÓN */
         .action-group {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn-glow {
-            width: 100%;
-            background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
-            color: #0c0517;
-            text-decoration: none;
-            padding: 14px 20px;
-            border-radius: 30px;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 0.82rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-            transition: all 0.2s ease;
-        }
-
-        .btn-glow:active {
-            transform: scale(0.97);
-        }
-
-        .btn-subtle {
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 215, 0, 0.3);
-            color: #ffd700;
-            padding: 10px 16px;
+            padding: 12px 16px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.2s ease;
+            font-size: 0.8rem;
+            color: #e0d0f0;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        .btn-subtle:hover {
-            background: rgba(255, 215, 0, 0.15);
+        .location-icon {
+            font-size: 1.1rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
         }
 
         /* DESTELLOS MÁGICOS */
@@ -256,10 +220,13 @@
         <!-- INFO DETALLADA Y HORARIOS -->
         <div class="info-pill">
             <div class="info-pill-title">DOMINGO 29 DE NOVIEMBRE</div>
-            <div class="info-pill-sub">⏰ 11:00 HS A 18:00 HS • Garupá</div>
+            <div class="info-pill-sub">11:00 HS A 18:00 HS • Garupá</div>
         </div>
+        
+        <!-- UBICACIÓN CON ICONO -->
         <div class="action-group">
-                📍Ernesto Sabato 1925, Garupa, Misiones
+            <span class="location-icon">📍</span>
+            <span>Ernesto Sabato 1925, Garupá, Misiones</span>
         </div>
         
     </div>
